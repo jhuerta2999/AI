@@ -1,0 +1,11 @@
+1. They have the same answer becasue it is the best option for the computer to take in both algorithms, minimax and alpha beta, but the time
+limit for test 5 is less becasue here we are testing the same game with the more efficient alpha beta algorithm that allows us to ignore 
+certain branches, meaning that it wouldnt take as long as the minimax test
+
+2. Even though the 1/3 of the branches would be pruned, the test with a depth of 7 would take longer becasue of the extra branching factor we have provided it. 
+To understand with number we b = 6 and p = 30, b^p = roughly 64,000,000,000,000, now if b was 7 then that means we would need to check roughly 10,000,000,000,000,
+7,000,000,000,000 if we actuallya re able to prune a third of them.
+
+3.Now I unfortunately was not able to actually test this out, but and I quote you, "Asuumptions in question 2 are grossly invalid." Now I am not sure if the assumptions 
+were grossly poor or grossly good, but I think they are grossly poor. The test would take much longer for the reasons I have mentioned in questions 2, and would probably 
+more nodes beacsue we are not guaranteed to actually prune a third of the brances.

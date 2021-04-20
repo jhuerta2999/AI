@@ -1,0 +1,8 @@
+1. This is actually the longest route possible based off the algorithm created. Running this problem with the algorithm the problem is expanded
+    twice and reaches the the lab via Cannon Hall, Big Ben, and then reachingt he goal which is the lab.
+
+2. Based off test 3 in where we want to get from stagger to CC, if we give Lab an h(n) of 34 the algorithm does not work becasue our test in where
+    we check if we have a consistent heuristic lets us know that the test fails becasue the heuristic is not consistent. If we blok this test then
+    we can see that the order things pooped from the PQ are different compared to the order when the h(n) is 4, the true value. We may have 
+    still gotten the same result but we run the risk of expanding more times than its neccesary and of course we run the risk of actually not 
+    finding the optimal path.

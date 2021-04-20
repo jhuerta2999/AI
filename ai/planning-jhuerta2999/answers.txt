@@ -1,0 +1,28 @@
+1. If we want to make a unidirectional ring with 5 locations then we would need a spot clear of robots and pallettes,
+    that same spot could be the packing location. All other spots would need to be filled with robots and possiblly 
+    all be carrying pallettes. The important part here would be that rather than having a location be conencted to its
+    previous location it could only be connected to its next location and of course in order for the robot to bring the 
+    pallette, there cant be a pallette or a robot at the next location. Having the locations be connected in a unidirectional
+    manner allows us to move the warehouse work in a ring like fashion by only having the robot be able to move foward.
+    Anyhwere there is a mentione of connected locations it must be unidirectional and not bidirectional like I have done in my moveRobot
+
+2. This is ceratinly not the only plan that is able to solve this problem. My design unloads an item and also removes it 
+    from the packing location. There could be plans in where the this action is split into two. Where unloading the item is 
+    one action, and then in checking if it does not have a required item and then which leads to removing the pallette, action 2
+    this plan would have an extra two steps in where we are explicityly removing the pallette once that pallette does not contain
+    the item.
+
+3. Here is a mehtod of moving a pallette converted from an PDDL to an HTN. There are some complications i think becasue of the way
+    I have defined my actions. Like I will not have something like a pick and place, the clsoest thing I would have to it is a bring pallette
+    and the paramters for a pick and place would not have the same as my bring pallette action:
+
+    by_movePallette(pallette, from, to, robot)
+	    task:	pickAndPlace(pallette, from, to, robot) 
+	    precond: noRobot(to) noPalltte(to) at(pallette from) at(robot from) connected(from to) connected(to from)
+	    subtasks:  <moveRobot(robot, robot(from), robot(to)), movePallette(pallette, pallette(from), pallette(to))>
+
+    Here is what I think it would be if I modified it 
+    by_movePallette(pallette, from, to, robot)
+	    task:	movePallette(pallette, from, to, robot) 
+	    precond: noRobot(to) noPalltte(to) at(pallette from) at(robot from) connected(from to) connected(to from)
+	    subtasks:  <moveRobot(robot, robot(from), robot(to)), movePallette(pallette, pallette(from), pallette(to)), robot>

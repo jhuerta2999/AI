@@ -1,0 +1,8 @@
+1.  If I were to make a seprate sphere than to the one that has been already created, we would need to create an instance of these
+    new sphere and make sure it is not the same as the one that already exists (inst sphere2 sphere)
+    and then we wold add the fact about its color to the associated sphere, (color sphere2 yellow)
+    But if we were just to simply provide sphere1 with a color we would simply say (color sphere1 yellow)
+
+2.  It would go ahead and say that dog isa mammal because of the associated bindings of animal --isa--> mammal --isa--> dog
+
+

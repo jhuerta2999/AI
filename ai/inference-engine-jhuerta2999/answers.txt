@@ -1,0 +1,6 @@
+1. Fact that supports grandma(ada, chen) is mom(ada, bing) and the rule 
+   that supports it is parent(bing, chen)mom(z, chen) -> grandma(z, chen)
+
+2. Would not work if we were to retract anything. If we were to retract A
+    and remove it and the then B would B unsupported and so will C and then
+    would unsupport A, but in trying to do this a cycle of delting supports starts
